@@ -5,27 +5,30 @@
     <link rel="stylesheet" href="p2.css"/>
     <!-- BOOTSTRAP (style only)-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <title>Intelligence Test</title>
+    <title>Intelligence Test </title>
     <script type="text/javascript" src="p2.js"></script>
   </head>
   <body lang="en-US">
 
 <!-- bootstrap user input code courtesy of: http://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_form_input&stacked=h -->
 	<div class="container">
-	  <h1 class="font">Welcome to the Intelligence Test!</h1>
-	  <p>This test will take you through a few different types of questions to test your knowledge.<br>Your task
-	  	is to try and determine the result you think these inputs would produce.</p><br>
-	  <p>Examples:<br> 1723635 = 5 <br> 4372635 = 20 <br> 6292742 = 12 
-	  	<br> 7193520 = 0 <br> 1924054 = 4 <br> 2458439 = ___</p>
+	  <h1 class="font">Results</h1>
+	  <p>Your score was a blank%</p><br>
+	  <p>Question 1 <br>Question 2 <br>Question 3 <br></p>
+	  <!--
 	  <form>
 	    <div class="form-group" id="usrGroup">
 	      <label for="usr">Input Guess Below</label>
-	      <input size="40" type="text" class="form-control" id="usr" placeholder="Good luck..." oninput="validateQ1()">
+	      <input size="40" type="text" class="form-control" id="usr" placeholder="Good luck..." oninput="validate()">
 	          <span id="usrError" class="control-label hidden-message">
               </span><br>
-          <button type="button" onclick="navPage2()">Next question</button>
+          <button type="button" onclick="navRestart()">Restart Test</button>
 	    </div>
 	  </form>
+	  -->
+		<div>
+			<button type="button" onclick="navRestart()">Restart Test</button>
+		</div>
 	</div>
   </body>
  </html>
