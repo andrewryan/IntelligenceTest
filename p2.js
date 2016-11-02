@@ -48,6 +48,7 @@ function validateQ2()
 		document.getElementById("usrGroup").classList.add("has-success");
 		document.getElementById("usrGroup").classList.remove("has-error");
 	}
+	//console.log(getCookie("questionTwo"));
 	setCookie("questionTwo", userInput);
 }
 function validateQ3()
@@ -79,11 +80,14 @@ function validateQ3()
 function evalResults()
 {
 	console.log("inside evalResults");
+	//console.log(document.cookie);
+	//resultThree = Number(resultThree);
 	var resultOne = getCookie("questionOne");
 	var resultTwo = getCookie("questionTwo");
 	var resultThree = getCookie("questionThree");
-	document.getElementById("usrError").innerHTML= resultThree;
+	document.getElementById("output").innerHTML= resultThree;
 	console.log(getCookie("questionThree"));
+	console.log(resultThree);
 }
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
 function setCookie(cname, cvalue)
@@ -104,7 +108,7 @@ function getCookie(cname)
             return c.substring(name.length, c.length);
         }
     }
-    return userInput;
+    return "";
 }
 function navPage2()
 {
