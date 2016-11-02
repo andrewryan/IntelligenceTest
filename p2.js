@@ -1,7 +1,9 @@
 //Created by Andrew Ryan
+var userInput = 0;
 function validateQ1()
 {
 	var userEntered = document.getElementById("usr").value;
+	userInput = userEntered;
 	//error checking courtesy of x15-InstantValidation lab
 	if(isNaN(userEntered) == true)
 	{
@@ -21,10 +23,12 @@ function validateQ1()
 		document.getElementById("usrGroup").classList.add("has-success");
 		document.getElementById("usrGroup").classList.remove("has-error");
 	}
+	setCookie("questionOne", userInput);
 }
 function validateQ2()
 {
 	var userEntered = document.getElementById("usr").value;
+	userInput = userEntered;
 	//error checking courtesy of x15-InstantValidation lab
 	if(isNaN(userEntered) == true)
 	{
@@ -44,12 +48,12 @@ function validateQ2()
 		document.getElementById("usrGroup").classList.add("has-success");
 		document.getElementById("usrGroup").classList.remove("has-error");
 	}
+	setCookie("questionTwo", userInput);
 }
 function validateQ3()
 {
 	var userEntered = document.getElementById("usr").value;
-	//document.cookie = userEntered;
-	//console.log(userEntered);
+	userInput = userEntered;
 	//error checking courtesy of x15-InstantValidation lab
 	if(isNaN(userEntered) == true)
 	{
@@ -69,17 +73,26 @@ function validateQ3()
 		document.getElementById("usrGroup").classList.add("has-success");
 		document.getElementById("usrGroup").classList.remove("has-error");
 	}
-	setCookie("questThree", userEntered);
-	//var cookieThree = setCookie(cookieThree, userEntered);
-	//console.log(cookieThree);
+	setCookie("questionThree", userInput);
+	console.log(getCookie("questionThree"));
+}
+function evalResults()
+{
+	console.log("inside evalResults");
+	var resultOne = getCookie("questionOne");
+	var resultTwo = getCookie("questionTwo");
+	var resultThree = getCookie("questionThree");
+	document.getElementById("usrError").innerHTML= resultThree;
+	console.log(getCookie("questionThree"));
 }
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
 function setCookie(cname, cvalue)
 {
-    document.cookie = cname + "=" + cvalue + ";" + ";path=/";;
+    document.cookie = cname + "=" + cvalue + ";" + ";path=/";
 }
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
-function getCookie(cname) {
+function getCookie(cname)
+{
     var name = cname + "=";
     var ca = document.cookie.split(';');
     for(var i = 0; i < ca.length; i++) {
@@ -91,7 +104,7 @@ function getCookie(cname) {
             return c.substring(name.length, c.length);
         }
     }
-    return userEntered;
+    return userInput;
 }
 function navPage2()
 {
