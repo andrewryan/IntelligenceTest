@@ -1,3 +1,4 @@
+//Created by Andrew Ryan
 function validateQ1()
 {
 	var userEntered = document.getElementById("usr").value;
@@ -47,6 +48,8 @@ function validateQ2()
 function validateQ3()
 {
 	var userEntered = document.getElementById("usr").value;
+	//document.cookie = userEntered;
+	//console.log(userEntered);
 	//error checking courtesy of x15-InstantValidation lab
 	if(isNaN(userEntered) == true)
 	{
@@ -66,6 +69,29 @@ function validateQ3()
 		document.getElementById("usrGroup").classList.add("has-success");
 		document.getElementById("usrGroup").classList.remove("has-error");
 	}
+	setCookie("questThree", userEntered);
+	//var cookieThree = setCookie(cookieThree, userEntered);
+	//console.log(cookieThree);
+}
+//courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
+function setCookie(cname, cvalue)
+{
+    document.cookie = cname + "=" + cvalue + ";" + ";path=/";;
+}
+//courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return userEntered;
 }
 function navPage2()
 {
