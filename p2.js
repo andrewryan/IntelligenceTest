@@ -54,7 +54,8 @@ function validateQ2()
 function validateQ3()
 {
 	var userEntered = document.getElementById("usr").value;
-	userInput = userEntered;
+	//userInput = userEntered;
+	var userInput = 0;
 	//error checking courtesy of x15-InstantValidation lab
 	if(isNaN(userEntered) == true)
 	{
@@ -73,6 +74,7 @@ function validateQ3()
 		document.getElementById("usrError").innerHTML="Congratulations you got it!";
 		document.getElementById("usrGroup").classList.add("has-success");
 		document.getElementById("usrGroup").classList.remove("has-error");
+		userInput++;
 	}
 	setCookie("questionThree", userInput);
 	console.log(getCookie("questionThree"));
@@ -85,9 +87,33 @@ function evalResults()
 	var resultOne = getCookie("questionOne");
 	var resultTwo = getCookie("questionTwo");
 	var resultThree = getCookie("questionThree");
-	document.getElementById("output").innerHTML= resultThree;
-	console.log(getCookie("questionThree"));
-	console.log(resultThree);
+	if(resultThree > 0)
+	{
+		document.getElementById("output").innerHTML= "Submission for question three: " + resultThree + " , Correct.";
+	}
+	else
+	{
+		document.getElementById("output").innerHTML= "Submission for question three: " + resultThree + " , Incorrect.";
+	}
+	if(resultTwo > 0)
+	{
+		document.getElementById("output").innerHTML= "Submission for question two: " + resultTwo + " , Correct.";
+	}
+	else
+	{
+		document.getElementById("output").innerHTML= "Submission for question two: " + resultTwo + " , Incorrect.";
+	}
+	if(resultOne > 0)
+	{
+		document.getElementById("output").innerHTML= "Submission for question one: " + resultOne + " , Correct.";
+	}
+	else
+	{
+		document.getElementById("output").innerHTML= "Submission for question one: " + resultOne + " , Incorrect.";
+	}
+	//document.getElementById("output").innerHTML= resultThree;
+	//console.log(getCookie("questionThree"));
+	//console.log(resultThree);
 }
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
 function setCookie(cname, cvalue)
