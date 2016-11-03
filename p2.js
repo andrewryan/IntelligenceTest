@@ -155,7 +155,7 @@ function getCookie(cname)
 }
 function navPage2()
 {
-    location.assign("file:///Users/staceyalves/Desktop/CINS%20110/p02-IntelligenceTest/q2.html?");
+    location.assign("q2.html");
 }
 function navPage3()
 {
