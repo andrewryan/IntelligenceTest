@@ -159,13 +159,13 @@ function navPage2()
 }
 function navPage3()
 {
-    location.assign("file:///Users/staceyalves/Desktop/CINS%20110/p02-IntelligenceTest/q3.html");
+    location.assign("q3.html");
 }
 function navResults()
 {
-    location.assign("file:///Users/staceyalves/Desktop/CINS%20110/p02-IntelligenceTest/results.html");
+    location.assign("results.html");
 }
 function navRestart()
 {
-    location.assign("file:///Users/staceyalves/Desktop/CINS%20110/p02-IntelligenceTest/index.html?");
+    location.assign("index.html");
 }
