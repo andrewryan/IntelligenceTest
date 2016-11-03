@@ -1,5 +1,5 @@
 //Created by Andrew Ryan
-var userScore;
+var userScore = 0;
 function validateQ1()
 {
 	var userEntered = document.getElementById("usr").value;
@@ -85,26 +85,36 @@ function validateQ3()
 }
 function evalResults()
 {
-	console.log(userScore);
+	//console.log(userEntered);
 	//console.log(document.cookie);
 	//resultThree = Number(resultThree);
 	var resultOne = getCookie("questionOne");
 	var resultTwo = getCookie("questionTwo");
 	var resultThree = getCookie("questionThree");
-	if(userScore == 1)
+	if(userScore =1)
 	{
 		document.getElementById("output").innerHTML= "Your score for the test is 33%";
 	}
-	else if(userScore == 2)
+	/*
+	if(resultOne != 18 && resultTwo != 26 && resultThree != 3)
+	{
+		document.getElementById("output").innerHTML= "Your score for the test is 0%";
+	}
+	else if(resultOne == 18 && resultTwo != 26 && resultThree != 3)
+	{
+		document.getElementById("output").innerHTML= "Your score for the test is 33%";
+	}
+	else if(resultOne == 18 && resultTwo == 26 && resultThree != 3)
 	{
 		document.getElementById("output").innerHTML= "Your score for the test is 67%";
 	}
-	else
+	else //if(resultOne == 18 && resultTwo != 26 && resultThree == 3)
 	{
 		document.getElementById("output").innerHTML= "Your score for the test is 100%";
 	}
+	*/
 	/*
-	if(resultThree > 0)
+	if(resultThree == 3)
 	{
 		document.getElementById("output").innerHTML= "Submission for question three: " + resultThree + "   Correct.";
 	}
@@ -112,7 +122,7 @@ function evalResults()
 	{
 		document.getElementById("output").innerHTML= "Submission for question three: " + resultThree + "   Incorrect.";
 	}
-	if(resultTwo > 0)
+	if(resultTwo == 26)
 	{
 		document.getElementById("output").innerHTML= "Submission for question two: " + resultTwo + "   Correct.";
 	}
@@ -120,7 +130,7 @@ function evalResults()
 	{
 		document.getElementById("output").innerHTML= "Submission for question two: " + resultTwo + "   Incorrect.";
 	}
-	if(resultOne > 0)
+	if(resultOne > 18)
 	{
 		document.getElementById("output").innerHTML= "Submission for question one: " + resultOne + "   Correct.";
 	}
