@@ -1,9 +1,8 @@
 //Created by Andrew Ryan
-var userScore = 0;
+//userScore = Number(userScore);
 function validateQ1()
 {
 	var userEntered = document.getElementById("usr").value;
-	//var userInput1 = 0; //userEntered;
 	//error checking courtesy of x15-InstantValidation lab
 	if(isNaN(userEntered) == true)
 	{
@@ -91,16 +90,48 @@ function evalResults()
 	var resultOne = getCookie("questionOne");
 	var resultTwo = getCookie("questionTwo");
 	var resultThree = getCookie("questionThree");
+	document.getElementById("output").innerHTML= resultOne + resultTwo + resultThree;
+
+
+	for(i = 0; i < 4; i++)
+	{
+	if(resultThree == 3)
+	{
+		document.getElementById("output").innerHTML= "Submission for question three: " + resultThree + "   Correct.";
+	}
+	else
+	{
+		document.getElementById("output").innerHTML= "Submission for question three: " + resultThree + "   Incorrect.";
+	}
+	if(resultTwo == 26)
+	{
+		document.getElementById("output2").innerHTML= "Submission for question two: " + resultTwo + "   Correct.";
+	}
+	else
+	{
+		document.getElementById("output2").innerHTML= "Submission for question two: " + resultTwo + "   Incorrect.";
+	}
+	if(resultOne > 18)
+	{
+		document.getElementById("output3").innerHTML= "Submission for question one: " + resultOne + "   Correct.";
+	}
+	else
+	{
+		document.getElementById("output3").innerHTML= "Submission for question one: " + resultOne + "   Incorrect.";
+	}
+}
+
+	/*
 	console.log(userScore);
-	if(userScore == 1)
+	if(resultOne == 18)
 	{
 		document.getElementById("output").innerHTML= "Your score for the test is 33%";
 	}
-	else if(userScore == 2)
+	else if(resultTwo == 26)
 	{
 		document.getElementById("output").innerHTML= "Your score for the test is 67%";
 	}
-	else if(userScore == 3)
+	else if(resuleThree == 3)
 	{
 		document.getElementById("output").innerHTML= "Your score for the test is 100%";
 	}
@@ -108,7 +139,7 @@ function evalResults()
 	{
 		document.getElementById("output").innerHTML= "Your score for the test is 0%";
 	}
-	/*
+	
 	if(resultOne != 18 && resultTwo != 26 && resultThree != 3)
 	{
 		document.getElementById("output").innerHTML= "Your score for the test is 0%";
