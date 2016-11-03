@@ -91,9 +91,22 @@ function evalResults()
 	var resultOne = getCookie("questionOne");
 	var resultTwo = getCookie("questionTwo");
 	var resultThree = getCookie("questionThree");
-	if(userScore =1)
+	console.log(userScore);
+	if(userScore == 1)
 	{
 		document.getElementById("output").innerHTML= "Your score for the test is 33%";
+	}
+	else if(userScore == 2)
+	{
+		document.getElementById("output").innerHTML= "Your score for the test is 67%";
+	}
+	else if(userScore == 3)
+	{
+		document.getElementById("output").innerHTML= "Your score for the test is 100%";
+	}
+	else
+	{
+		document.getElementById("output").innerHTML= "Your score for the test is 0%";
 	}
 	/*
 	if(resultOne != 18 && resultTwo != 26 && resultThree != 3)
