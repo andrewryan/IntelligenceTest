@@ -24,7 +24,6 @@ function validateQ1()
 		userScore++;
 	}
 	setCookie("questionOne", userEntered);
-	console.log(getCookie("questionOne"));
 }
 function validateQ2()
 {
@@ -50,7 +49,6 @@ function validateQ2()
 		userScore++;
 	}
 	setCookie("questionTwo", userEntered);
-	console.log(getCookie("questionTwo"));
 }
 function validateQ3()
 {
@@ -76,7 +74,6 @@ function validateQ3()
 		userScore++;
 	}
 	setCookie("questionThree", userEntered);
-	console.log(getCookie("questionThree"));
 }
 
 var score = 0;

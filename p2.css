@@ -25,10 +25,3 @@ div{
 	position: relative;
 	top: 60px;
 }
-
-div.image{
-	position: absolute; 
-	bottom: 2%; 
-	right: 2%; 
-	font-size: 10px;
-}
