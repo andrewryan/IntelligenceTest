@@ -9,37 +9,24 @@
     <title>Intelligence Test </title>
     <script type="text/javascript" src="p2.js"></script>
   </head>
-  <body lang="en-US">
+  <body onload="evalResults()" lang="en-US">
 
 <!-- bootstrap user input code courtesy of: http://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_form_input&stacked=h -->
 	<div class="container">
 	  <h1 class="font">Results</h1>
-	  <p>Your score was a blank%</p><br>
-	  <p>Question 1 <br>Question 2 <br>Question 3 <br></p>
 	  <div >
+	  	<h2 id="outputScore"></h2>
 	  	<p id="output"></p>
 	  	<p id="output2"></p>
 	  	<p id="output3"></p>
-	  <!--
-	  <form>
-	    <div class="form-group" id="usrGroup">
-	    	<span id="usrError" class="control-label hidden-message">
-
-	    	
-	    	<div id="output"> write to this for results>
-
-	      <label for="usr">Input Guess Below</label>
-	      <input size="40" type="text" class="form-control" id="usr" placeholder="Good luck..." oninput="validate()">
-	          <span id="usrError" class="control-label hidden-message">
-              </span><br>
-          <button type="button" onclick="navRestart()">Restart Test</button>
-	    </div>
-	  </form>
-		<div>
-			-->
-			<button type="button" onclick="evalResults()">What's my score?</button>
-			<button type="button" onclick="navRestart()">Restart Test</button>
-		</div>   
+	  </div>
+	  <div style="position: absolute; bottom: 2%; right: 2%; font-size: 20px;">
+		<button type="button" onclick="navRestart()">Restart Test</button>
+	  </div>  
 	</div>
+	<div style="position: absolute; bottom: 2%; right: 2%; font-size: 10px;">
+    <span><a style="color: #121212" href="http://www.designbolts.com/wp-content/uploads/2013/02/Grunge-Seamless-Pattern-For-Website-Background.jpg"><u>Image Source</u> </a>
+    </span>
+  </div>
   </body>
  </html>

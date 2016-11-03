@@ -1,5 +1,5 @@
 //Created by Andrew Ryan
-//userScore = Number(userScore);
+var userScore = 0;
 function validateQ1()
 {
 	var userEntered = document.getElementById("usr").value;
@@ -29,7 +29,6 @@ function validateQ1()
 function validateQ2()
 {
 	var userEntered = document.getElementById("usr").value;
-	//var userInput2 = 0;// = userEntered;
 	//error checking courtesy of x15-InstantValidation lab
 	if(isNaN(userEntered) == true)
 	{
@@ -57,8 +56,6 @@ function validateQ2()
 function validateQ3()
 {
 	var userEntered = document.getElementById("usr").value;
-	//var userInput3 = 0;
-	//userInput3 = userEntered;
 	//error checking courtesy of x15-InstantValidation lab
 	if(isNaN(userEntered) == true)
 	{
@@ -82,111 +79,60 @@ function validateQ3()
 	setCookie("questionThree", userEntered);
 	console.log(getCookie("questionThree"));
 }
+
+var score = 0;
 function evalResults()
 {
-	//console.log(userEntered);
-	//console.log(document.cookie);
-	//resultThree = Number(resultThree);
 	var resultOne = getCookie("questionOne");
 	var resultTwo = getCookie("questionTwo");
 	var resultThree = getCookie("questionThree");
-	document.getElementById("output").innerHTML= resultOne + resultTwo + resultThree;
 
-
-	for(i = 0; i < 4; i++)
-	{
 	if(resultThree == 3)
 	{
-		document.getElementById("output").innerHTML= "Submission for question three: " + resultThree + "   Correct.";
+		document.getElementById("output3").innerHTML= "Submission for question three: " + resultThree + "  -- Correct.";
+		score++;
 	}
 	else
 	{
-		document.getElementById("output").innerHTML= "Submission for question three: " + resultThree + "   Incorrect.";
+		document.getElementById("output3").innerHTML= "Submission for question three: " + resultThree + "  -- Incorrect.";
 	}
 	if(resultTwo == 26)
 	{
-		document.getElementById("output2").innerHTML= "Submission for question two: " + resultTwo + "   Correct.";
+		document.getElementById("output2").innerHTML= "Submission for question two: " + resultTwo + "  -- Correct.";
+		score++;
 	}
 	else
 	{
-		document.getElementById("output2").innerHTML= "Submission for question two: " + resultTwo + "   Incorrect.";
+		document.getElementById("output2").innerHTML= "Submission for question two: " + resultTwo + "  -- Incorrect.";
 	}
-	if(resultOne > 18)
-	{
-		document.getElementById("output3").innerHTML= "Submission for question one: " + resultOne + "   Correct.";
-	}
-	else
-	{
-		document.getElementById("output3").innerHTML= "Submission for question one: " + resultOne + "   Incorrect.";
-	}
-}
-
-	/*
-	console.log(userScore);
 	if(resultOne == 18)
 	{
-		document.getElementById("output").innerHTML= "Your score for the test is 33%";
-	}
-	else if(resultTwo == 26)
-	{
-		document.getElementById("output").innerHTML= "Your score for the test is 67%";
-	}
-	else if(resuleThree == 3)
-	{
-		document.getElementById("output").innerHTML= "Your score for the test is 100%";
+		document.getElementById("output").innerHTML= "Submission for question one: " + resultOne + "  -- Correct.";
+		score++;
 	}
 	else
 	{
-		document.getElementById("output").innerHTML= "Your score for the test is 0%";
+		document.getElementById("output").innerHTML= "Submission for question one: " + resultOne + "  -- Incorrect.";
 	}
 	
-	if(resultOne != 18 && resultTwo != 26 && resultThree != 3)
+	if(score == 1)
 	{
-		document.getElementById("output").innerHTML= "Your score for the test is 0%";
+		document.getElementById("outputScore").innerHTML= "Percentage = 33%";
 	}
-	else if(resultOne == 18 && resultTwo != 26 && resultThree != 3)
+	else if(score == 2)
 	{
-		document.getElementById("output").innerHTML= "Your score for the test is 33%";
+		document.getElementById("outputScore").innerHTML= "Percentage = 67%";
 	}
-	else if(resultOne == 18 && resultTwo == 26 && resultThree != 3)
+	else if(score == 3)
 	{
-		document.getElementById("output").innerHTML= "Your score for the test is 67%";
-	}
-	else //if(resultOne == 18 && resultTwo != 26 && resultThree == 3)
-	{
-		document.getElementById("output").innerHTML= "Your score for the test is 100%";
-	}
-	*/
-	/*
-	if(resultThree == 3)
-	{
-		document.getElementById("output").innerHTML= "Submission for question three: " + resultThree + "   Correct.";
+		document.getElementById("outputScore").innerHTML= "Percentage = 100%";
 	}
 	else
 	{
-		document.getElementById("output").innerHTML= "Submission for question three: " + resultThree + "   Incorrect.";
+		document.getElementById("outputScore").innerHTML= "Percentage = 0%";
 	}
-	if(resultTwo == 26)
-	{
-		document.getElementById("output").innerHTML= "Submission for question two: " + resultTwo + "   Correct.";
-	}
-	else
-	{
-		document.getElementById("output").innerHTML= "Submission for question two: " + resultTwo + "   Incorrect.";
-	}
-	if(resultOne > 18)
-	{
-		document.getElementById("output").innerHTML= "Submission for question one: " + resultOne + "   Correct.";
-	}
-	else
-	{
-		document.getElementById("output").innerHTML= "Submission for question one: " + resultOne + "   Incorrect.";
-	}
-	*/
-	//document.getElementById("output").innerHTML= resultThree;
-	//console.log(getCookie("questionThree"));
-	//console.log(resultThree);
 }
+
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
 function setCookie(cname, cvalue)
 {
