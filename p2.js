@@ -49,7 +49,6 @@ function validateQ2()
 		document.getElementById("usrGroup").classList.remove("has-error");
 		userScore++;
 	}
-	//console.log(getCookie("questionTwo"));
 	setCookie("questionTwo", userEntered);
 	console.log(getCookie("questionTwo"));
 }
