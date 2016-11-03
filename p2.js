@@ -1,5 +1,5 @@
 //Created by Andrew Ryan
-var userScore = 0;
+var userScore;
 function validateQ1()
 {
 	var userEntered = document.getElementById("usr").value;
@@ -85,17 +85,17 @@ function validateQ3()
 }
 function evalResults()
 {
-	console.log(userInput);
+	console.log(userScore);
 	//console.log(document.cookie);
 	//resultThree = Number(resultThree);
 	var resultOne = getCookie("questionOne");
 	var resultTwo = getCookie("questionTwo");
 	var resultThree = getCookie("questionThree");
-	if(userInput == 1)
+	if(userScore == 1)
 	{
 		document.getElementById("output").innerHTML= "Your score for the test is 33%";
 	}
-	else if(userInput == 2)
+	else if(userScore == 2)
 	{
 		document.getElementById("output").innerHTML= "Your score for the test is 67%";
 	}
