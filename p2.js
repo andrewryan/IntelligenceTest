@@ -1,9 +1,9 @@
 //Created by Andrew Ryan
-var userInput = 0;
+var userScore = 0;
 function validateQ1()
 {
 	var userEntered = document.getElementById("usr").value;
-	userInput = userEntered;
+	//var userInput1 = 0; //userEntered;
 	//error checking courtesy of x15-InstantValidation lab
 	if(isNaN(userEntered) == true)
 	{
@@ -22,13 +22,15 @@ function validateQ1()
 		document.getElementById("usrError").innerHTML="Congratulations you got it!";
 		document.getElementById("usrGroup").classList.add("has-success");
 		document.getElementById("usrGroup").classList.remove("has-error");
+		userScore++;
 	}
-	setCookie("questionOne", userInput);
+	setCookie("questionOne", userEntered);
+	console.log(getCookie("questionOne"));
 }
 function validateQ2()
 {
 	var userEntered = document.getElementById("usr").value;
-	userInput = userEntered;
+	//var userInput2 = 0;// = userEntered;
 	//error checking courtesy of x15-InstantValidation lab
 	if(isNaN(userEntered) == true)
 	{
@@ -47,15 +49,17 @@ function validateQ2()
 		document.getElementById("usrError").innerHTML="Congratulations you got it!";
 		document.getElementById("usrGroup").classList.add("has-success");
 		document.getElementById("usrGroup").classList.remove("has-error");
+		userScore++;
 	}
 	//console.log(getCookie("questionTwo"));
-	setCookie("questionTwo", userInput);
+	setCookie("questionTwo", userEntered);
+	console.log(getCookie("questionTwo"));
 }
 function validateQ3()
 {
 	var userEntered = document.getElementById("usr").value;
-	//userInput = userEntered;
-	var userInput = 0;
+	//var userInput3 = 0;
+	//userInput3 = userEntered;
 	//error checking courtesy of x15-InstantValidation lab
 	if(isNaN(userEntered) == true)
 	{
@@ -74,43 +78,57 @@ function validateQ3()
 		document.getElementById("usrError").innerHTML="Congratulations you got it!";
 		document.getElementById("usrGroup").classList.add("has-success");
 		document.getElementById("usrGroup").classList.remove("has-error");
-		userInput++;
+		userScore++;
 	}
-	setCookie("questionThree", userInput);
+	setCookie("questionThree", userEntered);
 	console.log(getCookie("questionThree"));
 }
 function evalResults()
 {
-	console.log("inside evalResults");
+	console.log(userInput);
 	//console.log(document.cookie);
 	//resultThree = Number(resultThree);
 	var resultOne = getCookie("questionOne");
 	var resultTwo = getCookie("questionTwo");
 	var resultThree = getCookie("questionThree");
-	if(resultThree > 0)
+	if(userInput == 1)
 	{
-		document.getElementById("output").innerHTML= "Submission for question three: " + resultThree + " , Correct.";
+		document.getElementById("output").innerHTML= "Your score for the test is 33%";
+	}
+	else if(userInput == 2)
+	{
+		document.getElementById("output").innerHTML= "Your score for the test is 67%";
 	}
 	else
 	{
-		document.getElementById("output").innerHTML= "Submission for question three: " + resultThree + " , Incorrect.";
+		document.getElementById("output").innerHTML= "Your score for the test is 100%";
+	}
+	/*
+	if(resultThree > 0)
+	{
+		document.getElementById("output").innerHTML= "Submission for question three: " + resultThree + "   Correct.";
+	}
+	else
+	{
+		document.getElementById("output").innerHTML= "Submission for question three: " + resultThree + "   Incorrect.";
 	}
 	if(resultTwo > 0)
 	{
-		document.getElementById("output").innerHTML= "Submission for question two: " + resultTwo + " , Correct.";
+		document.getElementById("output").innerHTML= "Submission for question two: " + resultTwo + "   Correct.";
 	}
 	else
 	{
-		document.getElementById("output").innerHTML= "Submission for question two: " + resultTwo + " , Incorrect.";
+		document.getElementById("output").innerHTML= "Submission for question two: " + resultTwo + "   Incorrect.";
 	}
 	if(resultOne > 0)
 	{
-		document.getElementById("output").innerHTML= "Submission for question one: " + resultOne + " , Correct.";
+		document.getElementById("output").innerHTML= "Submission for question one: " + resultOne + "   Correct.";
 	}
 	else
 	{
-		document.getElementById("output").innerHTML= "Submission for question one: " + resultOne + " , Incorrect.";
+		document.getElementById("output").innerHTML= "Submission for question one: " + resultOne + "   Incorrect.";
 	}
+	*/
 	//document.getElementById("output").innerHTML= resultThree;
 	//console.log(getCookie("questionThree"));
 	//console.log(resultThree);
